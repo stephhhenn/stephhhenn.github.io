@@ -10,18 +10,20 @@
 /* Body and font settings */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f9f9f9;
-    color: #444;
+    background-color: #f4f7fc;
+    color: #333;
     line-height: 1.6;
-    padding: 0 20px;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
 }
 
 /* Header Styling */
 header {
-    background-color: #1a202c; /* Darker background */
+    background-color: #1a202c;
     color: #fff;
     padding: 20px 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
@@ -39,41 +41,52 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.3s ease;
+    padding: 5px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #4FD1C5; /* Teal color on hover */
+    color: #1a202c;
+    background-color: #4FD1C5; /* Hover color */
+    border-radius: 5px;
 }
 
 /* Main Content Sections */
 section {
-    margin-bottom: 60px;
+    padding: 40px 20px;
     max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px;
+    margin: 0 auto 60px auto;
 }
 
-h1,
-h2 {
+/* About Section */
+#about {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+h1 {
     color: #333;
-    margin-bottom: 15px;
-    font-size: 2.5rem;
-    line-height: 1.2;
+    font-size: 3rem;
+    margin-bottom: 20px;
 }
 
 h2 {
     font-size: 2rem;
+    color: #4FD1C5;
+    margin-bottom: 10px;
 }
 
 p {
     font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.8;
 }
 
-/* Skills List */
+/* Skills Section */
+#skills {
+    text-align: center;
+}
+
 ul {
     list-style: none;
     display: grid;
@@ -84,20 +97,33 @@ ul {
 
 ul li {
     background-color: #fff;
-    padding: 15px;
+    padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 ul li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Projects Section */
+#projects {
+    text-align: center;
+}
+
+#projects ul {
+    padding: 0;
+}
+
+#projects li {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
 a.project-link {
     color: #4FD1C5;
     text-decoration: none;
@@ -106,28 +132,32 @@ a.project-link {
 }
 
 a.project-link:hover {
-    color: #2b6cb0;
+    color: #2b6cb0; /* Blue color on hover */
 }
 
 /* Contact Section */
-a[href^="mailto:"] {
+#contact {
+    text-align: center;
+}
+
+#contact a {
     color: #4FD1C5;
     font-weight: bold;
     text-decoration: none;
 }
 
-a[href^="mailto:"]:hover {
+#contact a:hover {
     color: #2b6cb0;
 }
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 30px 20px;
+    padding: 20px 0;
     background-color: #1a202c;
     color: #fff;
     font-size: 1rem;
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 /* Responsive Design */
@@ -135,14 +165,15 @@ footer {
     nav ul {
         flex-direction: column;
         align-items: center;
+        gap: 20px;
     }
 
     h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     section {
-        padding: 20px 10px;
+        padding: 30px 15px;
     }
 
     ul {
@@ -152,7 +183,7 @@ footer {
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     nav ul li {
@@ -161,5 +192,9 @@ footer {
 
     ul {
         grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 20px 10px;
     }
 }
